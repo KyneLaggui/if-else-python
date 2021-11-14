@@ -3,7 +3,10 @@ import colorama
 colorama.init()
 
 Input_Grade_of_User = float(input(colorama.Fore.MAGENTA + "Input Grade: "))
-Grade_User_Round_Function = math.ceil(Input_Grade_of_User)
+
+def Grade_User_Round_Function (Input_Grade_of_User, Decimal_of_Average=0):
+    Whole_Number_Ave = 10 ** Decimal_of_Average
+    return math.floor(Input_Grade_of_User * Whole_Number_Ave + 0.5) 
 
 def Grade_User_(Round_User_Grade):
             
@@ -64,5 +67,6 @@ def Grade_User_(Round_User_Grade):
         elif User_Choices_F ==3:
             print(colorama.Fore.RED + "You are dropped, you're no longer part of PUP ")
 
-Grade_User_(Grade_User_Round_Function)
+Final_Average_of_User= Grade_User_Round_Function(Input_Grade_of_User)
+Grade_User_(Final_Average_of_User)
 
